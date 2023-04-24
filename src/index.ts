@@ -17,7 +17,7 @@ const PRODUCTS_FILE_PATH = path.resolve(__dirname, "..", "products.json");
 
 const sendMessage = (msg: string) => bot.telegram.sendMessage(1093125492, msg, { parse_mode: 'Markdown' });
 
-cron.schedule('0 * * * * *', async () => {
+cron.schedule('0 0,15,30,45 * * * *', async () => {
   log("Iniciando automação...");
 
   let products = JSON.parse(
